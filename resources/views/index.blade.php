@@ -2,7 +2,6 @@
 
 @section('content')
 <div class ="card-body">
-@include('errors')
     <form action ="{{url('key')}}" method="POST" class ="form-horizontal">
         {{csrf_field()}}
         <div class="row">
@@ -15,7 +14,7 @@
                         <input type="text" name="key_word" class="form-control">
                     </div>
                     <div class="col-sm-6">
-                        <button type="submit" class="btn btn-success">Key Word</button> 
+                        <button type="submit" class="btn btn-success">START</button> 
                     </div>
                 </div>
                 <label for="ParseGoogle" class="col-sm-6 control-label">
@@ -24,9 +23,6 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <input type="text" name="key_domaine" class="form-control">
-                    </div>
-                    <div class="col-sm-6">
-                        <button type="submit" class="btn btn-success">Key Domaine</button> 
                     </div>
                 </div>
             </div>
@@ -44,6 +40,8 @@
                     <th scope="col" >ID</th>
 
                     <th scope="col" >Домен</th>
+
+                    <th scope="col" >Заголовки</th>
 
                     <th scope="col" >Ключивое слово</th>
 
@@ -63,6 +61,9 @@
                     </td>
                     <td>
                         <div>{{$table->key_word}}</div>
+                    </td>
+                    <td>
+                        <div>{{$table->word}}</div>
                     </td>
                     <td>
                         <div>{{$table->id_Google}}</div>

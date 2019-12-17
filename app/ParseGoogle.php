@@ -50,7 +50,7 @@ class ParseGoogle extends Model
             {
                 $item_domain = array_slice($domain[1], 0, 10)[$key];
 
-                DB::insert("INSERT INTO `parse_googles`(`domaine_name`,`key_word`,`id_Google`,`Time`) VALUES (?,?,?,?)",[$item_domain, $item_key_word, $key+1, $today]);
+                DB::insert("INSERT INTO `parse_googles`(`domaine_name`,`key_word`,`word`,`id_Google`,`Time`) VALUES (?,?,?,?,?)",[$item_domain, $item_key_word, $word, $key+1, $today]);
                 //return $key;
                 DB::table(`parse_googles`)->orderBy(`domaine_name`, 'asc');
             }

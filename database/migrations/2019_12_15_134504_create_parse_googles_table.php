@@ -17,6 +17,7 @@ class CreateParseGooglesTable extends Migration
             $table->increments('id');
             $table->string('domaine_name')->nullable();
             $table->string('key_word')->nullable();
+            $table->string('word')->nullable();
             $table->integer('id_Google')->unsigned();
             $table->timestamp('Time');
         });
