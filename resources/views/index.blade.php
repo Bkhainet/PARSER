@@ -37,15 +37,13 @@
         <div class="col-lg-6">
             <table class="table table-striped table-dark">
                 <thead>
-                    <th scope="col" >ID</th>
+                    <th scope="col" >Номер позиции</th>
 
                     <th scope="col" >Домен</th>
 
                     <th scope="col" >Заголовки</th>
 
                     <th scope="col" >Ключивое слово</th>
-
-                    <th scope="col" >Номер позиции</th>
 
                     <th scope="col" >Дата выборки</th>
 
@@ -54,7 +52,7 @@
                 @foreach ($parse_googles as $table)
                 <tr>
                     <td>
-                        <div>{{$table->id}}</div>
+                        <div>{{$table->id_Google}}</div>
                     </td>
                     <td>
                         <div>{{$table->domaine_name}}</div>
@@ -66,16 +64,13 @@
                         <div>{{$table->word}}</div>
                     </td>
                     <td>
-                        <div>{{$table->id_Google}}</div>
-                    </td>
-                    <td>
                         <div>{{$table->Time}}</div>
                     </td>
                 </tr>
                     @endforeach
                 </tbody>
-                
             </table>
+            {{$parse_googles->links()}}
         </div>
     </div>
 @endsection
