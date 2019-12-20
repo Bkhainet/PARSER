@@ -39,6 +39,8 @@
                 <thead>
                     <th scope="col" >Номер позиции</th>
 
+                    <th scope="col" >Позиция в Google</th>
+
                     <th scope="col" >Домен</th>
 
                     <th scope="col" >Заголовки</th>
@@ -51,6 +53,9 @@
                 <tbody>
                 @foreach ($parse_googles as $table)
                 <tr>
+                    <td>
+                        <div>{{$table->id}}</div>
+                    </td>
                     <td>
                         <div>{{$table->id_Google}}</div>
                     </td>
@@ -70,7 +75,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{$parse_googles->links()}}
+
         </div>
     </div>
 @endsection

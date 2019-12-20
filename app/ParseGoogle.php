@@ -18,6 +18,7 @@ class ParseGoogle extends Model
             
         for ( $number = 0; $number < 20; $number=$number+10)
         {
+
             $URL_link = "http://www.google.ru/search?q=".rawurlencode($word)."&newwindow=1&client=opera&rls=ru&channel=suggest&ie=UTF-8&oe=UTF-8&ei=rQzxXZmvFJKvmwWl7LHADQ&start=".rawurlencode($number)."&sa=N";
 
             $ch = curl_init($URL_link);
@@ -48,8 +49,10 @@ class ParseGoogle extends Model
                 preg_match_all('|<div class="BNeawe UPmit AP7Wnd">(.*?)›|is', $html, $domain);
             foreach (array_slice($key_word[1], 0, 10) as $key => $item_key_word)
             {
+                $id_Google = $number + $key;
+
                 $item_domain = array_slice($domain[1], 0, 10)[$key];
-                $table = DB::insert("INSERT INTO `parse_googles`(`domaine_name`,`key_word`,`word`,`Time`) VALUES (?,?,?,?)",[$item_domain, $item_key_word, $word, $today]);
+                $table = DB::insert("INSERT INTO `parse_googles`(`id_Google`,`domaine_name`,`key_word`,`word`,`Time`) VALUES (?,?,?,?,?)",[$id_Google+1, $item_domain, $item_key_word, $word, $today]);
             }
         }    
         fclose ($fp);   

@@ -14,7 +14,8 @@ class CreateParseGooglesTable extends Migration
     public function up()
     {
         Schema::create('parse_googles', function (Blueprint $table) {
-            $table->increments('id_Google');
+            $table->increments('id');
+            $table->integer('id_Google')->nullable();
             $table->string('domaine_name')->nullable();
             $table->string('key_word')->nullable();
             $table->string('word')->nullable();

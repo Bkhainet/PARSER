@@ -12,7 +12,7 @@ class ParseGoogleController extends Controller
 {
     public function show()
     {
-        $tables= DB::table('parse_googles')->paginate(10);
+        $tables= DB::table('parse_googles')->paginate(100);
         return view('index', ['parse_googles' => $tables]);
     }
     public function post(Request $request)
@@ -22,13 +22,7 @@ class ParseGoogleController extends Controller
 
         //DB::table('parse_googles')->truncate();
         App\ParseGoogle::getPage($word, $dom);
-        $tables= DB::table('parse_googles')->paginate(10);
+        $tables= DB::table('parse_googles')->paginate(100);
         return view('index', ['parse_googles' => $tables]);
     }
-    // public function serch(Request $request)
-    // {
-    //     $word = $request->input('key_domaine');
-    //     $tables= DB::table('parse_googles')->orderBy('domaine_name', 'asc')->paginate(100);
-    //     return view('index', ['parse_googles' => $tables]);
-    // }
 }
