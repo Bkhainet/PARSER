@@ -15,7 +15,7 @@ class ParseGoogle extends Model
         //$fp1 = fopen ("header.txt", "w");
         $today = date("Y-m-d H:i:s"); 
             
-        for ( $number = 0; $number < 10; $number=$number+10)
+        for ( $number = 0; $number < 100; $number=$number+10)
         {
 
             $URL_link = "http://www.google.ru/search?q=".rawurlencode($word)."&newwindow=1&client=opera&rls=ru&channel=suggest&ie=UTF-8&oe=UTF-8&ei=rQzxXZmvFJKvmwWl7LHADQ&start=".rawurlencode($number)."&sa=N";
