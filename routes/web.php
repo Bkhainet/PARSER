@@ -11,15 +11,10 @@
 |
 */
 
-use Illuminate\Http\Request;
-// Route::get('/', function () {
-//     return view('index');
-// });
-//Route::get('/parse', 'ParseGoogleController@index');
-
 Route::get('/', 'ParseGoogleController@show');
 Route::post('/key', 'ParseGoogleController@post');
-//Route::post('/serch', 'ParseGoogleController@serch');
+Route::get('/history', 'ParseGoogleController@get');
+
 
 
 

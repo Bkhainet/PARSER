@@ -2,5 +2,4 @@
 @include('test.header')
 @include('test.navbar')
 @include('test.performance')
-@include('test.errors')
-@include('test.form')
+@include('test.main')
